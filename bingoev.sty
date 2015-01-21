@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{bingoev}[2015/01/21 Bingo e.V. Corporate Identity]
+\RequirePackage{microtype}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphicx}
+
+\pagestyle{fancy}
+\addtolength{\headheight}{20pt}
+\addtolength{\topmargin}{-1.5\headheight}
+\fancypagestyle{plain}{\thispagestyle{fancy}}
+\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
+\rhead{\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}}
+
+\endinput
