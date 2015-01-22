@@ -7,11 +7,14 @@
 \RequirePackage{graphicx}
 
 \pagestyle{fancy}
-\addtolength{\headheight}{20pt}
-\addtolength{\topmargin}{-1.5\headheight}
 \fancypagestyle{plain}{\thispagestyle{fancy}}
-\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
-\rhead{\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}}
+
+\DeclareOption{letterhead}{
+	\addtolength{\headheight}{20pt}
+	\addtolength{\topmargin}{-1.5\headheight}
+	\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
+	\rhead{\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}}
+}
 
 \DeclareOption{impressum}{
 	\lfoot{Krumenauerstr. 54\\85049 Ingolstadt\\Telefon 0841 33072\\Telefax 0841 33073}
