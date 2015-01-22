@@ -5,6 +5,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{fancyhdr}
 \RequirePackage{graphicx}
+\RequirePackage{xcolor}
 
 \pagestyle{fancy}
 \fancypagestyle{plain}{\thispagestyle{fancy}}
@@ -16,9 +17,18 @@
 	\rhead{\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}}
 }
 
+\newlength{\impressumfontsize}
+\setlength{\impressumfontsize}{9pt}
+\definecolor{impressumcolor}{gray}{0.3}
 \DeclareOption{impressum}{
-	\lfoot{Krumenauerstr. 54\\85049 Ingolstadt\\Telefon 0841 33072\\Telefax 0841 33073}
-	\rfoot{Vorsitzender: Daniel Steuer\\\texttt{vorstand@bingo-ev.de}}
+	\lfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
+		\color{impressumcolor}%
+		Krumenauerstr. 54\\85049 Ingolstadt\\Telefon 0841 33072\\Telefax 0841 33073%
+	}
+	\rfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
+		\color{impressumcolor}%
+		Vorsitzender: Daniel Steuer\\\texttt{vorstand@bingo-ev.de}%
+	}
 }
 
 \ProcessOptions\relax
