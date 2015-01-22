@@ -7,10 +7,13 @@
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 
-\pagestyle{fancy}
-\fancypagestyle{plain}{\thispagestyle{fancy}}
+\newcommand{\setuppagestyles}{%
+	\pagestyle{fancy}%
+	\fancypagestyle{plain}{\thispagestyle{fancy}}%
+}
 
 \DeclareOption{letterhead}{
+	\setuppagestyles
 	\addtolength{\headheight}{20pt}
 	\addtolength{\topmargin}{-1.5\headheight}
 	\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
@@ -21,6 +24,7 @@
 \setlength{\impressumfontsize}{9pt}
 \definecolor{impressumcolor}{gray}{0.3}
 \DeclareOption{impressum}{
+	\setuppagestyles
 	\lfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
 		\color{impressumcolor}%
 		Krumenauerstr. 54\\85049 Ingolstadt\\Telefon 0841 33072\\Telefax 0841 33073%
