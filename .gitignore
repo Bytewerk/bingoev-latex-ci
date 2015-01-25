@@ -2,8 +2,8 @@
 *
 !.gitignore
 !*.tex
-!*.sty
-!*.tex
+!*.dtx
+!*.ins
 !*.eps
 !graphics
 !bingoev
