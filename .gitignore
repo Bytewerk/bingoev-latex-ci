@@ -5,6 +5,7 @@
 !*.dtx
 !*.ins
 !*.eps
+!Makefile
 !graphics
 !bingoev
 !License.txt
