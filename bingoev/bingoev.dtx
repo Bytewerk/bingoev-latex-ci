@@ -8,8 +8,9 @@
 
 % \iffalse
 %<*driver>
+\ProvidesFile{bingoev.dtx}
 \documentclass{ltxdoc}
-\usepackage{bingoev}
+\usepackage[letterhead,impressum]{bingoev}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -32,12 +33,36 @@
 
 \RequirePackage[scaled]{berasans}
 \renewcommand*{\familydefault}{\sfdefault}
+%</package>
+% \fi
 
+% \GetFileInfo{bingoev.sty}
+% \title{The \texttt{bingoev} package\\ \texttt{\fileversion}}
+% \author{Peter Brantsch \\ \texttt{peter.brantsch@web.de}}
+% \date{\filedate}
+% \maketitle
+% \thispagestyle{fancy}
+
+% \begin{abstract}
+% This package is used to make documents which load it conform to the corporate identity of Bingo e.V.
+% \end{abstract}
+
+% \StopEventually{}
+% \section{Implementation}
+%
+% \begin{macro}{\setuppagestyles}
+% This internal macro makes even plain pages, like the first page of an article, fancy.
+%    \begin{macrocode}
 \newcommand{\setuppagestyles}{%
 	\pagestyle{fancy}%
 	\fancypagestyle{plain}{\thispagestyle{fancy}}%
 }
+%    \end{macrocode}
+% \end{macro}
 
+% \begin{macro}{letterhead}
+% Pass this option to get the page header with name and logo.
+%    \begin{macrocode}
 \DeclareOption{letterhead}{
 	\setuppagestyles
 	\addtolength{\headheight}{20pt}
@@ -47,7 +72,12 @@
 		\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}%
 	}}
 }
+%    \end{macrocode}
+% \end{macro}
 
+% \begin{macro}{impressum}
+% Pass this option to get the footer with the impressum.
+%    \begin{macrocode}
 \newlength{\impressumfontsize}
 \setlength{\impressumfontsize}{9pt}
 \definecolor{impressumcolor}{gray}{0.3}
@@ -62,9 +92,12 @@
 		Vorsitzender: Daniel Steuer\\\texttt{vorstand@bingo-ev.de}%
 	}
 }
+%    \end{macrocode}
+% \end{macro}
 
+%    \begin{macrocode}
 \ProcessOptions\relax
+%    \end{macrocode}
 
+% \Finale
 \endinput
-%</package>
-% \fi
