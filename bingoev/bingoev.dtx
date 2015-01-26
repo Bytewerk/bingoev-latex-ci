@@ -6,10 +6,23 @@
 % Peter Brantsch
 % \fi
 
+% \iffalse
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{bingoev}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+        \DocInput{bingoev.dtx}
+\end{document}
+%</driver>
+% \fi
+
+% \iffalse
 %<*package>
-\iffalse
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{bingoev}[2015/01/21 Bingo e.V. Corporate Identity]
+\ProvidesPackage{bingoev}[2015/01/21 v0.01 Bingo e.V. Corporate Identity]
 \RequirePackage{microtype}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
@@ -53,17 +66,5 @@
 \ProcessOptions\relax
 
 \endinput
-\fi
 %</package>
-
-%<*driver>
-\documentclass{ltxdoc}
-\usepackage{bingoev}
-\EnableCrossrefs
-\CodelineIndex
-\RecordChanges
-\begin{document}
-        \DocInput{bingoev.dtx}
-\end{document}
-%</driver>
 % \fi
