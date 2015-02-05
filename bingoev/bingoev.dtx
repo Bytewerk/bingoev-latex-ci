@@ -50,6 +50,15 @@
 % \StopEventually{}
 % \section{Implementation}
 %
+% \begin{macro}{\bingoevLogo}
+% This macro inserts the logo of Bingo e.V.
+% \begin{macrocode}
+\newcommand{\bingoevLogo}[1]{%
+	\includegraphics[#1]{graphics/bingoev}%
+}
+% \end{macrocode}
+% \end{macro}
+%
 % \begin{macro}{\setuppagestyles}
 % This internal macro makes even plain pages, like the first page of an article, fancy.
 %    \begin{macrocode}
@@ -69,7 +78,7 @@
 	\addtolength{\topmargin}{-1.5\headheight}
 	\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
 	\rhead{\raisebox{-4pt}{%
-		\includegraphics[keepaspectratio=true,height=\headheight]{graphics/bingoev}%
+		\bingoevLogo{keepaspectratio=true,height=\headheight}
 	}}
 }
 %    \end{macrocode}
