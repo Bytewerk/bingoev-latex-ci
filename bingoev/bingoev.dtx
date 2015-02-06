@@ -74,11 +74,11 @@
 %    \begin{macrocode}
 \DeclareOption{letterhead}{
 	\setuppagestyles
-	\addtolength{\headheight}{20pt}
-	\addtolength{\topmargin}{-1.5\headheight}
+	\newlength{\logoheight}
+	\setlength{\logoheight}{25pt}
 	\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
-	\rhead{\raisebox{-4pt}{%
-		\bingoevLogo{keepaspectratio=true,height=\headheight}
+	\rhead{\raisebox{-4pt}[0pt][0pt]{%
+		\bingoevLogo{keepaspectratio=true,height=\logoheight}
 	}}
 }
 %    \end{macrocode}
