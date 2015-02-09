@@ -44,18 +44,27 @@
 % \section{Implementation}
 %
 
+% We extend the article class:
 %    \begin{macrocode}
-
 \LoadClass{article}
-\RequirePackage[letterhead]{bingoev}
+%    \end{macrocode}
+% Perform some general style tweaks:
+%    \begin{macrocode}
 \RequirePackage[a4paper,margin=3.5cm]{geometry}
-\RequirePackage[letterhead]{bingoev}
-\RequirePackage[right]{eurosym}
-\RequirePackage[ngerman]{babel}
-\RequirePackage{minutes}
 \RequirePackage[labelfont=bf,font=it]{caption}
-\RequirePackage{tabu}
-
+\RequirePackage[right]{eurosym}
+%    \end{macrocode}
+% Then we load our corporate identity package:
+%    \begin{macrocode}
+\RequirePackage[letterhead]{bingoev}
+%    \end{macrocode}
+% The language of meetings of Bingo e.V. is German:
+%    \begin{macrocode}
+\RequirePackage[ngerman]{babel}
+%    \end{macrocode}
+% Load the minutes package, which does the actual typesetting of minutes for us.
+%    \begin{macrocode}
+\RequirePackage{minutes}
 %    \end{macrocode}
 % \Finale
 \endinput
