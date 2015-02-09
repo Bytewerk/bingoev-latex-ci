@@ -27,12 +27,6 @@
 %</driver>
 % \fi
 
-% \iffalse
-%<*class>
-\RequirePackage[letterhead]{bingoev}
-%</class>
-% \fi
-
 % \changes{v0.0.1}{2015/01/28}{Initial version}
 
 % \GetFileInfo{bingoevminutes.dtx}
@@ -50,5 +44,18 @@
 % \section{Implementation}
 %
 
+%    \begin{macrocode}
+
+\LoadClass{article}
+\RequirePackage[letterhead]{bingoev}
+\RequirePackage[a4paper,margin=3.5cm]{geometry}
+\RequirePackage[letterhead]{bingoev}
+\RequirePackage[right]{eurosym}
+\RequirePackage[ngerman]{babel}
+\RequirePackage{minutes}
+\RequirePackage[labelfont=bf,font=it]{caption}
+\RequirePackage{tabu}
+
+%    \end{macrocode}
 % \Finale
 \endinput
