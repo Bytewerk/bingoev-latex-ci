@@ -38,6 +38,10 @@
 
 % \begin{abstract}
 % This class is used for writing minutes of Bingo e.V.
+% It uses the \texttt{minutes} package to do the actual typesetting of minutes.
+% The \texttt{Minutes} environment from the aforementioned package is redefined
+% to check whether certain important data was supplied, such as the date, to
+% prevent forgetting to enter it.
 % \end{abstract}
 
 % \StopEventually{}
@@ -65,6 +69,39 @@
 % Load the minutes package, which does the actual typesetting of minutes for us.
 %    \begin{macrocode}
 \RequirePackage{minutes}
+%    \end{macrocode}
+%
+% \begin{macro}{\b@ensuredefined}
+% This macro has the purpose of testing whether a certain attribute of a minutes was defined.
+% It is called with the name of the attribute as its argument.
+% In case the given attribute, for example \texttt{moderation}, is not defined, a \texttt{ClassError} will be raised.
+%    \begin{macrocode}
+\makeatletter
+\newcommand{\b@ensuredefined}[1]{%
+	\edef\b@tcmd{\csname min@#1\endcsname}
+	\expandafter\ifx \b@tcmd \relax
+		\ClassError{bingoevminutes}%
+			{No #1 defined for one of the minutes}%
+			{Please define #1 using the appropriate command listed in the minutes documentation.}
+	\fi
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% Redefine the \texttt{Minutes} environment to include a few checks:
+%    \begin{macrocode}
+\let\b@endMinutes\endMinutes
+\renewcommand{\endMinutes}{%
+	\b@ensuredefined{moderation}
+	\b@ensuredefined{minutetaker}
+	\b@ensuredefined{participant}
+	\b@ensuredefined{date}
+	\b@ensuredefined{starttime}
+	\b@ensuredefined{endtime}
+	\b@ensuredefined{location}
+	\b@endMinutes
+}
+\makeatother
 %    \end{macrocode}
 % \Finale
 \endinput
