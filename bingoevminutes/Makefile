@@ -1,12 +1,11 @@
-TC = pdflatex
-TCFLAGS = -halt-on-error -interaction nonstopmode
-TCTARGET = pdf
+include ../common.mk
 CLS = bingoevminutes
+USERINSTALLDIR = ${TEXMFDIR}/${CLS}
 TEXINPUTS = .:..//: #add the top level directory to the search path of LaTeX
 
 all: ${CLS}.cls ${CLS}.pdf
 
-%.cls: %.ins %.dtx
+%.cls: %.ins %.dtx ../bingoev/bingoev.sty
 	TEXINPUTS=${TEXINPUTS} ${TC} ${TCFLAGS} $<
 
 %.${TCTARGET}: %.dtx %.cls
@@ -16,3 +15,9 @@ all: ${CLS}.cls ${CLS}.pdf
 
 clean:
 	-rm -f ${CLS}.{aux,glo,idx,log,pdf,cls}
+
+userinstall: all ${USERINSTALLDIR}/${CLS}.cls
+
+${USERINSTALLDIR}/${CLS}.cls: ${CLS}.cls
+	-mkdir -p $(dir $@)
+	cp $< $@

@@ -6,6 +6,7 @@
 !*.ins
 !*.eps
 !Makefile
+!common.mk
 !graphics
 !bingoev
 !bingoevminutes

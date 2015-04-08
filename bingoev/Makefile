@@ -1,7 +1,6 @@
-TC = pdflatex
-TCFLAGS = -halt-on-error -interaction nonstopmode
-TCTARGET = pdf
+include ../common.mk
 PKG = bingoev
+USERINSTALLDIR = ${TEXMFDIR}/${PKG}
 
 all: ${PKG}.sty ${PKG}.pdf
 
@@ -15,3 +14,9 @@ all: ${PKG}.sty ${PKG}.pdf
 
 clean:
 	-rm -f ${PKG}.{aux,glo,idx,log,pdf,sty}
+
+userinstall: all ${USERINSTALLDIR}/${PKG}.sty
+
+${USERINSTALLDIR}/${PKG}.sty: ${PKG}.sty
+	-mkdir -p $(dir $@)
+	cp $< $@
