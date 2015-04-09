@@ -1,5 +1,6 @@
 include ../common.mk
 PKG = bingoev
+GRAPHICSDIR = graphics
 USERINSTALLDIR = ${TEXMFDIR}/${PKG}
 
 all: ${PKG}.sty ${PKG}.pdf
@@ -15,8 +16,13 @@ all: ${PKG}.sty ${PKG}.pdf
 clean:
 	-rm -f ${PKG}.{aux,glo,idx,log,pdf,sty}
 
-userinstall: all ${USERINSTALLDIR}/${PKG}.sty
+userinstall: all ${USERINSTALLDIR}/${PKG}.sty ${USERINSTALLDIR}/${GRAPHICSDIR}
 
-${USERINSTALLDIR}/${PKG}.sty: ${PKG}.sty
-	-mkdir -p $(dir $@)
+${USERINSTALLDIR}:
+	-mkdir -p $@
+
+${USERINSTALLDIR}/${PKG}.sty: ${PKG}.sty ${USERINSTALLDIR}
 	cp $< $@
+
+${USERINSTALLDIR}/${GRAPHICSDIR}: ${GRAPHICSDIR} ${USERINSTALLDIR}
+	cp -r $< $@
