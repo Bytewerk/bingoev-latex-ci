@@ -2,19 +2,26 @@ include ../common.mk
 PKG = bingoev
 GRAPHICSDIR = graphics
 USERINSTALLDIR = ${TEXMFDIR}/${PKG}
+COMPILETEX = ${TC} ${TCFLAGS} $<
 
 all: ${PKG}.sty ${PKG}.pdf
 
 %.sty: %.ins %.dtx
-	${TC} ${TCFLAGS} $<
+	${COMPILETEX}
 
-%.${TCTARGET}: %.dtx %.sty
-	${TC} ${TCFLAGS} $<
+%.idx: %.dtx
+	${COMPILETEX}
+
+%.ind: %.idx
+	makeindex -s gind.ist -o $@ $<
+
+%.${TCTARGET}: %.dtx %.sty %.ind
+	${COMPILETEX}
 
 .PHONY: clean
 
 clean:
-	-rm -f ${PKG}.{aux,glo,idx,log,pdf,sty}
+	-rm -f ${PKG}.{aux,glo,idx,ind,ilg,log,pdf,sty}
 
 userinstall: all ${USERINSTALLDIR}/${PKG}.sty ${USERINSTALLDIR}/${GRAPHICSDIR}
 
