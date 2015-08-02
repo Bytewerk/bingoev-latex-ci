@@ -33,6 +33,8 @@
 
 \RequirePackage[scaled]{berasans}
 \renewcommand*{\familydefault}{\sfdefault}
+
+\RequirePackage{hyperref}
 %</package>
 % \fi
 
@@ -83,7 +85,12 @@
 }
 %    \end{macrocode}
 % \end{macro}
-
+% \begin{macro}{\mailto}
+% This macro creates a mailto-Link.
+%    \begin{macrocode}
+\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
+%    \end{macrocode}
+% \end{macro}
 % \begin{macro}{impressum}
 % Pass this option to get the footer with the impressum.
 %    \begin{macrocode}
@@ -98,7 +105,7 @@
 	}
 	\rfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
 		\color{impressumcolor}%
-		Vorsitzender: Daniel Steuer\\\texttt{vorstand@bingo-ev.de}%
+		Vorsitzender: Daniel Steuer\\\mailto{vorstand@bingo-ev.de}%
 	}
 }
 %    \end{macrocode}
