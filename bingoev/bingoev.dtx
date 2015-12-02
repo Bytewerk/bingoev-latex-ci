@@ -34,7 +34,7 @@
 \RequirePackage[scaled]{berasans}
 \renewcommand*{\familydefault}{\sfdefault}
 
-\RequirePackage[colorlinks, linkcolor=blue]{hyperref}
+\RequirePackage{hyperref}
 %</package>
 % \fi
 
@@ -70,6 +70,14 @@
 \definecolor{bingoblau}{HTML}{5678EA}
 %    \end{macrocode}
 % \end{macro}
+%
+% Then, we style \texttt{hyperref} beautifully.
+%    \begin{macrocode}
+\hypersetup{
+	colorlinks,
+	linkcolor=bingoblau
+}
+%    \end{macrocode}
 %
 % \begin{macro}{\bingoevLogo}
 % This macro inserts the logo of Bingo e.V.
