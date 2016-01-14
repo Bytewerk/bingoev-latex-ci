@@ -6,5 +6,13 @@ endef
 all:
 	${pass_options}
 
+userinstall:
+	${pass_options}
+
+clean:
+	${pass_options}
+
+.PHONY: all userinstall clean
+
 %:
 	${pass_options}

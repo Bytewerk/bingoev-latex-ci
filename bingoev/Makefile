@@ -4,7 +4,7 @@ GRAPHICSDIR = graphics
 USERINSTALLDIR = ${TEXMFDIR}/${PKG}
 COMPILETEX = ${TC} ${TCFLAGS} $<
 
-all: ${PKG}.sty ${PKG}.pdf
+all: ${PKG}.sty ${PKG}.${TCTARGET}
 
 %.sty: %.ins %.dtx
 	${COMPILETEX}

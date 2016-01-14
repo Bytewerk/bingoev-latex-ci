@@ -4,7 +4,7 @@ USERINSTALLDIR = ${TEXMFDIR}/${CLS}
 TEXINPUTS = .:..//: #add the top level directory to the search path of LaTeX
 COMPILETEX = TEXINPUTS=${TEXINPUTS} ${TC} ${TCFLAGS} $<
 
-all: ${CLS}.cls ${CLS}.pdf
+all: ${CLS}.cls ${CLS}.${TCTARGET}
 
 %.idx: %.dtx
 	${COMPILETEX}
