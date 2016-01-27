@@ -88,6 +88,18 @@
 %    \end{macrocode}
 % \end{macro}
 %
+% \begin{macro}{\bingoevNameLang}
+%    \begin{macrocode}
+\newcommand{\bingoevNameLang}{Bürgernetzverein Ingolstadt e.V.}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\bingoevName}
+%    \begin{macrocode}
+\newcommand{\bingoevName}{bingo e.V.}
+%    \end{macrocode}
+% \end{macro}
+%
 % \begin{macro}{\bingoevVorsitzender}
 % Print the name of our chairman.
 %    \begin{macrocode}
@@ -147,7 +159,7 @@
 	\setuppagestyles
 	\newlength{\logoheight}
 	\setlength{\logoheight}{25pt}
-	\lhead{Bürgernetzverein Ingolstadt e.V. -- bingo e.V.}
+	\lhead{\bingoevNameLang -- \bingoevName}
 	\rhead{\raisebox{-4pt}[0pt][0pt]{%
 		\bingoevLogo{keepaspectratio=true,height=\logoheight}
 	}}
