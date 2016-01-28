@@ -1,0 +1,98 @@
+% \iffalse meta-comment
+% "THE PIZZA-WARE LICENSE" (Revision 23):
+% <peter@bingo-ev.de> wrote this file.  As long as you retain this notice
+% you can do whatever you want with this stuff. If we meet some day, and you
+% think this stuff is worth it, you can buy me pizza in return.
+% Peter Brantsch
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{bingoevletter.dtx}
+%</driver>
+%<class>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<class>\ProvidesClass{bingoevletter}
+%<*class>
+    [2016/01/28 v1.0 bingoev letter class]
+%</class>
+%
+%<*driver>
+\documentclass[a4paper]{ltxdoc}
+\usepackage[letterhead]{bingoev}
+\EnableCrossrefs         
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{bingoevletter.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{0}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{v1.0}{2016/01/28}{Initial version}
+%
+% \GetFileInfo{bingoevletter.dtx}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+% 
+%
+% \title{The \texttt{bingoevletter} class\thanks{This document
+%   corresponds to \textsf{bingoevletter}~\fileversion, dated \filedate.}}
+% \author{Peter Brantsch \\ \mailto{peter@bingo-ev.de}}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+% This class is intended to be used for typesetting official letters from \bingoevNameLang\ to its members.
+%
+% \section{Usage}
+%
+% Just use it as you would use \texttt{scrlttr2}, from which it is derived.
+% It will preconfigure a few variables for you.
+%
+% \StopEventually{\PrintChanges\PrintIndex}
+%
+% \section{Implementation}
+% First, we load the class we derive from and our corporate identity package.
+% The \texttt{fromlogo} option must be passed so that \texttt{scrlttr2} will actually show our logo.
+%    \begin{macrocode}
+\PassOptionsToClass{fromlogo, fromemail, fromphone, fromfax}{scrlttr2}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrlttr2}}
+\ProcessOptions\relax
+\LoadClass{scrlttr2}
+\RequirePackageWithOptions{bingoev}
+%    \end{macrocode}
+%
+% We can then configure the KOMA-Script letter class to our liking,
+% setting up everything for outgoing letters from our association.
+%    \begin{macrocode}
+\setkomavar{fromlogo}{\bingoevLogo{keepaspectratio, width=5cm}}
+\setkomavar{fromname}{\bingoevName}
+\setkomavar{fromphone}{\bingoevTelefon}
+\setkomavar{fromfax}{\bingoevFax}
+\setkomavar{fromemail}{\mailto{\bingoevVorstandMail}}
+\setkomavar{signature}{\bingoevVorsitzender\\\scriptsize\textit{Erster Vorsitzender}}
+\setkomavar{fromaddress}{\bingoevAddrStrasse\\\bingoevAddrStadt}
+%    \end{macrocode}
+% \clearpage
+% \Finale
+\endinput
