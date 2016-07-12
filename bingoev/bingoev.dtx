@@ -135,13 +135,6 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\bingoevFax}
-% Print the fax number.
-%    \begin{macrocode}
-\newcommand{\bingoevFax}{0841\,33073}
-%    \end{macrocode}
-% \end{macro}
-%
 % \begin{macro}{\setuppagestyles}
 % This internal macro makes even plain pages, like the first page of an article, fancy.
 %    \begin{macrocode}
@@ -182,7 +175,7 @@
 	\setuppagestyles
 	\lfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
 		\color{impressumcolor}%
-		\bingoevAddrStrasse\\\bingoevAddrStadt\\Telefon \bingoevTelefon\\Telefax \bingoevFax%
+		\bingoevAddrStrasse\\\bingoevAddrStadt\\Telefon \bingoevTelefon%
 	}
 	\rfoot{\fontsize{\impressumfontsize}{\impressumfontsize}\selectfont%
 		\color{impressumcolor}%
