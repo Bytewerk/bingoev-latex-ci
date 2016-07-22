@@ -75,7 +75,7 @@
 % First, we load the class we derive from and our corporate identity package.
 % The \texttt{fromlogo} option must be passed so that \texttt{scrlttr2} will actually show our logo.
 %    \begin{macrocode}
-\PassOptionsToClass{fromlogo, fromemail, fromphone, fromfax}{scrlttr2}
+\PassOptionsToClass{fromlogo, fromemail, fromphone}{scrlttr2}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrlttr2}}
 \ProcessOptions\relax
 \LoadClass{scrlttr2}
@@ -88,7 +88,6 @@
 \setkomavar{fromlogo}{\bingoevLogo{keepaspectratio, width=5cm}}
 \setkomavar{fromname}{\bingoevName}
 \setkomavar{fromphone}{\bingoevTelefon}
-\setkomavar{fromfax}{\bingoevFax}
 \setkomavar{fromemail}{\mailto{\bingoevVorstandMail}}
 \setkomavar{signature}{\bingoevVorsitzender\\\scriptsize\textit{Erster Vorsitzender}}
 \setkomavar{fromaddress}{\bingoevAddrStrasse\\\bingoevAddrStadt}
