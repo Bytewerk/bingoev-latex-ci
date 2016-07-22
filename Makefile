@@ -1,6 +1,7 @@
 define pass_options =
 make -C bingoev $@
 make -C bingoevminutes $@
+make -C bingoevletter $@
 endef
 
 all:
