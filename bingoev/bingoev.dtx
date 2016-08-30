@@ -185,6 +185,16 @@
 %    \end{macrocode}
 % \end{macro}
 
+% \begin{macro}{rm}
+% Define our own version of this actually deprecated font command, mostly to keep modern versions of KOMA-Script happy together with \texttt{fancyhdr}.
+%    \begin{macrocode}
+\def\rm{%
+	\PackageWarning{bingoev}{Font command `\textbackslash{}rm' is deprecated. Most likely this usage is due to internal commands of package fancyhdr. In that case, ignore this warning.}%
+	\normalfont\rmfamily%
+}%
+%    \end{macrocode}
+% \end{macro}
+
 %    \begin{macrocode}
 \ProcessOptions\relax
 %    \end{macrocode}
